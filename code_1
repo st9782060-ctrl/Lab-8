@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    const int m = 12;
+    int arr[m] = {34, -5, 12, 0, 89, 7, -14, 23, 56, 3, 41, -2};
+
+    cout << "Original array: ";
+    for (int i = 0; i < m; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // Сортування за зростанням (метод бульбашки)
+    for (int i = 0; i < m - 1; i++) {
+        for (int j = 0; j < m - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "Sorted ascending: ";
+    for (int i = 0; i < m; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // Сортування за спаданням
+    for (int i = 0; i < m - 1; i++) {
+        for (int j = 0; j < m - i - 1; j++) {
+            if (arr[j] < arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "Sorted descending: ";
+    for (int i = 0; i < m; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Press Enter to exit...";
+    cin.get();
+    return 0;
+}
